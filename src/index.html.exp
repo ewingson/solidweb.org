@@ -39,7 +39,9 @@
     })
   </script>
   <link href="/mash.css" rel="stylesheet"> 
-</head><body class="db-layout">
+</head>
+
+<body class="db-layout">
 
 <div id="prototype" class="container">
   <div class="page-header">
