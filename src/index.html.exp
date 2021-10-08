@@ -1,10 +1,9 @@
-<!doctype html><html><head>
-  <meta charset="utf-8"/>
-  <title>Solid Data Browser</title>
-<!--
-  <link rel="stylesheet" href="/common/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/common/css/solid.css">
--->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Solid</title>
   <style>
   #prototype {
     margin : 2em;
@@ -21,13 +20,12 @@
   }
   </style>
   <script>
-    var podRoot;
     document.addEventListener('DOMContentLoaded', async function() {
       if (!UI.authn.currentUser()) await UI.authn.checkUser();
       let user = UI.authn.currentUser();
       if( user ) {
         document.getElementById('prototype').style.display = "none";
-        podRoot = user.uri.replace(/profile.*$/,'');
+        var podRoot = user.uri.replace(/profile.*$/,'');
         podRoot = UI.rdf.sym(podRoot)
         panes.runDataBrowser();
         var outliner = panes.getOutliner(document)
@@ -44,12 +42,10 @@
 </head><body class="db-layout">
 
 <div id="prototype" class="container">
-
   <div class="page-header">
-     <h1>Welcome to the Solid Prototype</h1>
-       <div id="loginStatusArea" class="pull-right"></div>
-     </h1>
- </div>
+    <h1>Welcome to the Solid Prototype</h1>
+    <div id="loginStatusArea" class="pull-right"></div>
+  </div>
 
   <p class="lead">
     This is a prototype implementation of a Solid server.
@@ -59,13 +55,14 @@
     If you have not already done so, please create an account.
   </p>
 
-  <p class="lead" id="loggedIn">
-  </p>
-  
 <h2>Extended Information</h2>
 <p class="lead">- <a href="https://solidproject.org">Solid Project Site</a></p>
 <p class="lead">- <a href="https://github.com/solid">Solid Github Site</a></p>
+
   <section>
+    {{#if serverLogo}}
+    <img src="{{serverLogo}}" />
+    {{/if}}
     <h2>Server info</h2>
     <dl>
       <dt>Name</dt>
@@ -84,10 +81,15 @@
     </dl>
   </section>
 </div>
+  
   <header class="db-layout__header header" id="PageHeader"></header>
-  <div class="TabulatorOutline db-layout__content" id="DummyUUID" role="main">
-    <table id="outline"></table>
-    <div id="GlobalDashboard"></div>
-  </div><footer class="db-layout__footer" id="PageFooter"></footer>
-  <script src="/mashlib.js"></script>
-</body></html>
+<div class="TabulatorOutline db-layout__content" id="DummyUUID" role="main">
+  <table id="outline"></table>
+  <div id="GlobalDashboard"></div>
+</div>
+<footer class="db-layout__footer" id="PageFooter"></footer>
+
+<script src="/mashlib.js"></script>
+
+</body>
+</html>
