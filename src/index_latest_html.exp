@@ -40,7 +40,6 @@
 </head><body class="db-layout">
 
 <h1 style="margin:2em;padding:2em;border:8px solid green; display:none" id="loggedIn"></h1>
-  
 
 <div id="prototype" class="container">
 
@@ -57,7 +56,6 @@
 
     If you have not already done so, please create an account.
   </p>
-
   
   <section>
    <!-- {{#if serverLogo}} -->
