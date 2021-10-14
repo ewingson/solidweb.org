@@ -2,6 +2,7 @@
   <meta charset="utf-8"/>
   <link rel="stylesheet" href="/common/css/bootstrap.min.css">
   <link rel="stylesheet" href="/common/css/solid.css">
+  <title>Welcome to solidweb.org</title>
   <script>
     var keyname = 'SolidServerRootRedirectLink';
     document.addEventListener('DOMContentLoaded', async function() {
