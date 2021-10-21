@@ -1,8 +1,8 @@
 <!doctype html><html><head>
   <meta charset="utf-8"/>
+  <title>Welcome to solidweb.org</title>
   <link rel="stylesheet" href="/common/css/bootstrap.min.css">
   <link rel="stylesheet" href="/common/css/solid.css">
-  <title>Welcome to solidweb.org</title>
   <script>
     var keyname = 'SolidServerRootRedirectLink';
     document.addEventListener('DOMContentLoaded', async function() {
@@ -20,7 +20,7 @@
 
 // IF NOT LOGGED IN AND COOKIE EXISTS: REMOVE COOKIE, HIDE WELCOME, SHOW LINK TO PROFILE
 //
-        if( webId ) { 
+        if( webId ) {
           window.localStorage.removeItem(keyname);
           document.getElementById('prototype').style.display = "none";
           document.getElementById('loggedIn').style.display = "block";
@@ -34,10 +34,10 @@
          document.getElementById('loginStatusArea').appendChild(UI.authn.loginStatusBox(document, null, {}))
         }
 
-      }     
+      }
     })
   </script>
-  <link href="/mash.css" rel="stylesheet"> 
+  <link href="/mash.css" rel="stylesheet">
 </head><body class="db-layout">
 
 <h1 style="margin:2em;padding:2em;border:8px solid green; display:none" id="loggedIn"></h1>
@@ -57,11 +57,11 @@
 
     If you have not already done so, please create an account.
   </p>
-  
+
   <section>
-   <!-- {{#if serverLogo}} -->
-   <!-- <img src="{{serverLogo}}" /> -->
-   <!-- {{/if}} -->
+    <!-- {{#if serverLogo}} -->
+    <!-- <img src="{{serverLogo}}" /> -->
+    <!-- {{/if}} -->
     <h2>Server info</h2>
     <dl>
       <dt>Name</dt>
@@ -69,7 +69,7 @@
       <dt>Description</dt>
       <dd>an experimental Solid Server</dd>
       <dt>Details</dt>
-      <dd>Running on <a href="https://www.w3.org/community/solid/wiki/">Solid 5.6.9-beta</a></dd>
+      <dd>Running on <a href="https://www.w3.org/community/solid/wiki/">Solid 5.6.12</a></dd>
       <dt>Support</dt>
       <dd><a href="https://gitlab.com/solidweb.org/support">Gitlab Support Group</a></dd>
       <dd><a href="https://gitter.im/solidweb-org/community">Gitter Support Chat</a></dd>
