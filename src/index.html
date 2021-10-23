@@ -35,13 +35,14 @@
         else {
          let loginArea = document.getElementById('loginStatusArea');
          document.getElementById('prototype').style.display = "block";
-         let html = `<input type="button" onclick="window.location.href="/register" value="register" style="padding: 1em; border-radius:0.5em; font-size: 100%;background-color: #efe;">`
+         let html = `<input type="button" onclick="window.location.href=
+'https://solidweb.org/register'" value="register" style="padding: 1em; border-radius:0.5em; font-size: 100%;background-color: #efe;">`
          let span = document.createElement("SPAN")
          span.innerHTML=html
-         loginArea.appendChild(span); 
+         loginArea.appendChild(span);
          loginArea.appendChild(UI.authn.loginStatusBox(document, null, {}))
-         const signUpButton = loginArea.querySelectorAll('input')[2];         
-         signUpButton.style.display="none";  
+         const signUpButton = loginArea.querySelectorAll('input')[2];
+         signUpButton.style.display="none";
         }                    
       }
     })
