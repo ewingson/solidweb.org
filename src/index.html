@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="/common/css/solid.css">
   <script>
     var keyname = 'SolidServerRootRedirectLink';
+    function register(){ alert(2); window.location.href="/register"; }
     document.addEventListener('DOMContentLoaded', async function() {
       if (!UI.authn.currentUser()) await UI.authn.checkUser();
       let user = UI.authn.currentUser();
@@ -24,16 +25,24 @@
           window.localStorage.removeItem(keyname);
           document.getElementById('prototype').style.display = "none";
           document.getElementById('loggedIn').style.display = "block";
-          document.getElementById('loggedIn').innerHTML = `<p>Your webId and profile address are</p> <p> &lt;${webId}&gt.</p><a href="${webId}">visit your profile to login</a></div>`;
+          document.getElementById('loggedIn').innerHTML = `<p>Your WebID and profile address are</p> <p> &lt;${webId}&gt.</p><a href="${webId}">Visit your profile to log in.</a></div>`;
         }
 
-// IF NOT LOGGED IN AND COOKIE DOES NOT EXIST  : SHOW WELCOME, SHOW LOGIN/SIGN-UP BUTTONS
+// IF NOT LOGGED IN AND COOKIE DOES NOT EXIST  
+//     SHOW WELCOME, SHOW LOGIN BUTTON
+//     HIDE LOGIN BUTTON, ADD REGISTER BUTTON
 //
         else {
-            document.getElementById('prototype').style.display = "block";
-         document.getElementById('loginStatusArea').appendChild(UI.authn.loginStatusBox(document, null, {}))
-        }
-
+         let loginArea = document.getElementById('loginStatusArea');
+         document.getElementById('prototype').style.display = "block";
+         let html = `<input type="button" onclick="window.location.href="/register" value="register" style="padding: 1em; border-radius:0.5em; font-size: 100%;background-color: #efe;">`
+         let span = document.createElement("SPAN")
+         span.innerHTML=html
+         loginArea.appendChild(span); 
+         loginArea.appendChild(UI.authn.loginStatusBox(document, null, {}))
+         const signUpButton = loginArea.querySelectorAll('input')[2];         
+         signUpButton.style.display="none";  
+        }                    
       }
     })
   </script>
