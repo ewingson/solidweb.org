@@ -37,25 +37,32 @@
     </p>
 
       <section>
-        {{#if serverLogo}}
-        <img src="{{serverLogo}}" /> 
-        {{/if}}
-        <h2>Server info</h2>
-        <dl>
-          <dt>Name</dt>
-          <dd>{{serverName}}</dd>
-          {{#if serverDescription}}
-          <dt>Description</dt>
-          <dd>{{serverDescription}}</dd>
-          {{/if}}
-          <dt>Details</dt>
-          <dd>Running on <a href="https://github.com/solid/node-solid-server/releases/tag/v{{serverVersion}}">Node Solid Server {{serverVersion}}</a></dd>
-        </dl>
-      </section>
+    <!-- {{#if serverLogo}} -->
+    <!-- <img src="{{serverLogo}}" /> -->
+    <!-- {{/if}} -->
+    <h2>Server info</h2>
+    <dl>
+      <dt>Name</dt>
+      <dd>solidweb.org</dd>
+      <dt>Description</dt>
+      <dd>an experimental Solid Server</dd>
+      <dt>Details</dt>
+          <dd>Running on <a href="https://www.w3.org/community/solid/wiki/">Node Solid Server 5.6.14</a></dd>
+      <dt>Support</dt>
+      <dd><a href="https://gitlab.com/solidweb.org/support">Gitlab Support Group</a></dd>
+      <dd><a href="https://gitter.im/solidweb-org/community">Gitter Support Chat</a></dd>
+      <dt>Terms and Conditions</dt>
+      <dd><a href="https://serverproject.de/files/solidweb_org_terms.txt">./terms.txt</a></dd>
+      <dt>Documentation</dt>
+      <dd><a href="https://gist.github.com/ewingson/c6e97a996aa51eac9f7fd1b7eaf14dc4">How it's done</a></dd>
+      <dt>License</dt>
+      <dd><a href="https://github.com/ewingson/solidweb.org/blob/master/LICENSE">MIT</a></dd>
+    </dl>
+  </section>
           </div> <!-- end content-->
             </div> <!-- end container-->
               <footer class="pageFooter"></footer>
                 <script src="/common/js/index-buttons.js"></script>
 
 </body>
-</html> 
+</html>
